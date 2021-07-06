@@ -38,5 +38,24 @@ output: [[[7, 6, 5], [4, 3], [2, 1]]
 '''
 
 
+def reverse_flatten_list(n):
+    res=[]
+    typ = type(n)
+    if (typ==list or typ==tuple or typ==set) :
+        for item in n:
+            item_typ = type(item)
+            if (item_typ == str or item_typ==int or item_typ==float):
+                res.reverse()
+                res.append(item)
+            elif (item_typ==list or item_typ==tuple or item_typ==set):
+                res.extend(reverse_flatten_list(item)) # Recursion
+    else:
+        return(n)
+    return (res)
+
+a=[[1, 2], [3, 4], [5, 6, 7]]
+b = reverse_flatten_list(a)
+print(b)
+   
 
 
