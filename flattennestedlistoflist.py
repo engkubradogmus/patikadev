@@ -57,5 +57,22 @@ a=[[1, 2], [3, 4], [5, 6, 7]]
 b = reverse_flatten_list(a)
 print(b)
    
+  
+  
+  def reverse_list(n):
+    res=[]
+    typ = type(n)
+    if (typ==list or typ==tuple or typ==set) :
+        for item in n:
+            res.sort(key = len)
+            print("final list", str(res))
+            
+a=[[1, 2], [3, 4], [5, 6, 7]]
+b = reverse_list(a)
+print(b)
+   
+   
+
+  
 
 
